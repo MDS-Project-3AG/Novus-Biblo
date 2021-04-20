@@ -2,6 +2,13 @@
 
 **Application made by:** [Andreea Popa](https://github.com/andreea-popa22), [Gabi Badescu](https://github.com/BadescuGabi), [Albert David](https://github.com/albertdavid00) 
 
+### Epics:
+- Customers have to register and authentificate before they can use the application and have their own profile with statistics and receive recommendations.
+- Customers can access different sections like favorite books, "haven't read for a while", "to read" books and the most popular books and they can also share opinions about books.
+- Customers have to provide informations about the books so that they can receive specific statistics.
+- Customers can set goals and receive reminders to meet their expectations.
+
+
 ### User stories:
 0. As a customer, I want to be able to register so that I can create my own account.
 1. As a customer, I want to have a list of favorite books so that I remember the ones that I really liked.
