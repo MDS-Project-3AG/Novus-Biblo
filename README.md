@@ -1,3 +1,3 @@
 ## NOVUS BIBLO
 
-Application made by: [https://github.com/albertdavid00](Albert David) @BadescuGabi @albertdavid00
+Application made by: [Albert David](https://github.com/albertdavid00) @BadescuGabi @albertdavid00
