@@ -10,7 +10,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        tools:context=".ui.login.Login">
+        tools:context=".Login">
 
     <TextView
             android:text="Log in to your account."
@@ -44,23 +44,23 @@
             android:id="@+id/password"
             android:hint="Password" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
             android:layout_marginTop="13dp" app:layout_constraintTop_toBottomOf="@+id/username"/>
-    <TextView
-            android:text="You don't have an account? Register here"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/not_registered"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="56dp"
-            tools:layout_editor_absoluteY="511dp"/>
     <ProgressBar
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar" tools:layout_editor_absoluteY="552dp" tools:layout_editor_absoluteX="152dp"
-            android:visibility="invisible"/>
+            android:id="@+id/progressBar" tools:layout_editor_absoluteY="559dp" tools:layout_editor_absoluteX="149dp"
+            android:visibility="invisible" tools:ignore="MissingConstraints"/>
     <Button
             android:text="Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/login_button"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="153dp"
             android:layout_marginTop="117dp" app:layout_constraintTop_toBottomOf="@+id/password"/>
+    <Button
+            android:text="You don't have an account? Register here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button"
+            android:background="#FFFFFF" android:layout_marginTop="22dp"
+            app:layout_constraintTop_toBottomOf="@+id/login_button" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="63dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

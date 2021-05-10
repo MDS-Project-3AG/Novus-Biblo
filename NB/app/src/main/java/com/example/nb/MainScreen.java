@@ -1,4 +1,4 @@
-package com.example.nb.data;
+package com.example.nb;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

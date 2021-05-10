@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
     EditText email, confirm_password, password;
-    TextView registered;
+    Button registered;
     Button register_button;
     FirebaseAuth fAuth;
 
@@ -31,7 +31,7 @@ public class Register extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirm_password = findViewById(R.id.confirm_password);
         register_button = findViewById(R.id.register_button);
-        registered = findViewById(R.id.registered);
+        registered = findViewById(R.id.button2);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -77,10 +77,11 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        registered.setOnClickListener(new View.OnClickListener(){
+        registered.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                startActivity(new Intent(getApplicationContext(), Login.class));
+            public void onClick(View v) {
+                Intent intent = new Intent(Register.this, Login.class);
+                startActivity(intent);
             }
         });
 

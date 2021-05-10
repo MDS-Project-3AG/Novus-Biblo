@@ -1,0 +1,94 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.myapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:10:5-67
+11-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:10:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:11:5-79
+12-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:11:22-76
+13
+14    <application
+14-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:5:5-27:19
+15        android:name="androidx.multidex.MultiDexApplication"
+16        android:allowBackup="true"
+16-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:6:13-39
+17        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+17-->[androidx.core:core:1.1.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\73435d3d97560fff0f796379f3e1a830\core-1.1.0\AndroidManifest.xml:24:18-86
+18        android:debuggable="true"
+19        android:icon="@mipmap/ic_launcher"
+19-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:7:13-47
+20        android:label="@string/app_name"
+20-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:8:13-45
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:9:13-58
+22        android:supportsRtl="true"
+22-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:10:13-39
+23        android:theme="@style/AppTheme" >
+23-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:11:13-44
+24        <activity
+24-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:12:9-26:20
+25            android:name="com.microsoft.identity.client.BrowserTabActivity"
+25-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:13:17-80
+26            android:exported="true"
+26-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:25:13-36
+27            android:label="@string/app_name"
+27-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:14:17-49
+28            android:theme="@style/AppTheme.NoActionBar" >
+28-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:15:17-60
+29            <intent-filter>
+29-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:16:13-25:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:17:17-68
+30-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:17:25-66
+31                <action android:name="android.intent.action.VIEW" />
+31-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:18:17-69
+31-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:18:25-66
+32
+33                <category android:name="android.intent.category.DEFAULT" />
+33-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:19:17-76
+33-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:19:27-73
+34                <category android:name="android.intent.category.BROWSABLE" />
+34-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:20:17-78
+34-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:20:27-75
+35
+36                <data
+36-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:21:17-23:70
+37                    android:host="com.example.myapplication"
+37-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:22:23-63
+38                    android:path="/3ZLW/TAqPvR43Zh79ejFQDOdka8="
+38-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:23:23-67
+39                    android:scheme="msauth" />
+39-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:21:23-46
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+41-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:24:17-76
+41-->C:\Users\Andreea\Desktop\FACULTATE NOU\SEM2\MDS\MDS_proiect\proiect\Novus-Biblo\MyApplication\app\src\main\AndroidManifest.xml:24:27-74
+42            </intent-filter>
+43        </activity>
+44        <!-- MSAL activity that will be used to process all the auth related logic -->
+45        <activity
+45-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:16:9-20:47
+46            android:name="com.microsoft.identity.common.internal.providers.oauth2.AuthorizationActivity"
+46-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:17:13-105
+47            android:configChanges="orientation|keyboardHidden|screenSize"
+47-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:18:13-74
+48            android:exported="false"
+48-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:19:13-37
+49            android:launchMode="singleTask" /> <!-- Activity to invoke an interactive request to the intent passed by ad-accounts(Broker) -->
+49-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:20:13-44
+50        <activity android:name="com.microsoft.identity.client.internal.controllers.BrokerActivity" />
+50-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:28:9-102
+50-->[com.microsoft.identity.client:msal:1.4.0] C:\Users\Andreea\.gradle\caches\transforms-2\files-2.1\bc34e4dfe0bfe39044f82c28c46cda6b\jetified-msal-1.4.0\AndroidManifest.xml:28:19-99
+51    </application>
+52
+53</manifest>
