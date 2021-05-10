@@ -67,7 +67,7 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
                             System.out.println("daaaa");
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), Dummy.class));
                         }
                         else{
                             Toast.makeText(Register.this, "Error." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
