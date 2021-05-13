@@ -58,12 +58,11 @@ public class MainScreen extends AppCompatActivity {
 
     private static String ip = "192.168.1.16";
     private static String port = "1433";
-    private static String Classes = "net.sourceforge.jtds.jdbc.Driver";
-    private static String database = "db1";
-    private static String username = "Admin1";
+    //private static String Classes = "nb.c54iovni0dyv.us-east-2.rds.amazonaws.com";
+    private static String database = "nb";
+    private static String username = "admin";
     private static String password = "NovusBiblo1";
-    private static String url = "jdbc:sqlserver://novusbiblo.database.windows.net:1433;database=db1;user=Admin1@novusbiblo;password=NovusBiblo1;ssl=request;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-
+    private static String url = "jdbc:mysql://nb.c54iovni0dyv.us-east-2.rds.amazonaws.com/nb";
     private Connection connection = null;
 
     @Override
@@ -77,9 +76,9 @@ public class MainScreen extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         try {
-            Class.forName(Classes);
+            //Class.forName("com.mysql.jdbc.Driver");
             System.out.println("inainte");
-            connection = DriverManager.getConnection(url);
+            connection = DriverManager.getConnection(url, username, password);
             System.out.println("am trecut");
             textView.setText("SUCCESS");
         }
