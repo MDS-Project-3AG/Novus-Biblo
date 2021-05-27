@@ -1,10 +1,12 @@
 package com.example.nb;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,6 +57,7 @@ public class MainScreen extends AppCompatActivity {
 
     private TextView textView;
     private TextView textView1;
+    private Button btn;
 
     private static String ip = "192.168.1.16";
     private static String port = "1433";
@@ -73,6 +76,18 @@ public class MainScreen extends AppCompatActivity {
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.INTERNET}, PackageManager.PERMISSION_GRANTED);
         textView = findViewById(R.id.textView2);
 
+        btn = (Button) findViewById(R.id.buttonSearch);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, AllBooksActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         try {
@@ -90,6 +105,9 @@ public class MainScreen extends AppCompatActivity {
             e.printStackTrace();
             textView.setText("FAILURE");
         }
+
+
+
     }
 
     public void sqlButton(View view){
@@ -109,4 +127,6 @@ public class MainScreen extends AppCompatActivity {
             textView.setText("Connection is null");
         }
     }
+
+
 }
