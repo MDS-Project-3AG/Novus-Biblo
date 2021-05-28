@@ -5,6 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Log">
+        tools:context=".Dummy">
 
+    <Button
+            android:text="LOG OUT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/logout"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="303dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="176dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

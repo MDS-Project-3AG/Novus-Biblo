@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity{
     EditText email, confirm_password, password;
-    TextView not_registered;
+    Button not_registered;
     ProgressBar progressBar;
     Button login_button;
     FirebaseAuth fAuth;
@@ -23,23 +23,25 @@ public class Login extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirm_password = findViewById(R.id.confirm_password);
         login_button = findViewById(R.id.login_button);
         progressBar = findViewById(R.id.progressBar);
-        TextView registered = findViewById(R.id.registered);;
-
+        not_registered = findViewById(R.id.button);
 
         fAuth = FirebaseAuth.getInstance();
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String semail = email.getText().toString().trim();
                 String spass = password.getText().toString().trim();
+                System.out.println(semail);
+                System.out.println(spass);
 
                 if (TextUtils.isEmpty(semail)){
                     email.setError("Email is required!");
@@ -56,30 +58,59 @@ public class Login extends AppCompatActivity{
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
-
+                //progressBar.setVisibility(View.VISIBLE);
+//
                 fAuth.signInWithEmailAndPassword(semail,spass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             System.out.println("daaaa");
                             Toast.makeText(Login.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainScreen.class));
                         }
                         else{
-                            Toast.makeText(Login.this, "Error." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Errrrrrrrrrrrrrrrror." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
+//                fAuth.createUserWithEmailAndPassword(semail, spass).addOnCompleteListener(Login.this, new OnCompleteListener() {
+//                    @Override
+//                    public void onComplete(@NonNull Task task) {
+//
+//                        if (!task.isSuccessful()) {
+//                            Toast.makeText(Login.this.getApplicationContext(),
+//                                    "SignUp unsuccessful: " + task.getException().getMessage(),
+//                                    Toast.LENGTH_SHORT).show();
+//                        } else {
+//                            System.out.println("sdfsdfsdf NU MERGEEEE ");
+//                            startActivity(new Intent(Login.this, MainScreen.class));
+//
+//                        }
+//                    }
+//                });
+
+
+//                FirebaseAuth.getInstance().signInWithEmailAndPassword(semail, spass).addOnCompleteListener((OnCompleteListener<AuthResult>) task -> {
+//
+//                    if (task.isSuccessful()) {
+//                        Intent intent = new Intent(Login.this, MainScreen.class);
+//                        startActivity(intent);
+//                    }
+//                    else{
+//                            Toast.makeText(Login.this, "Error." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                        }
+//                });
+
             }
         });
 
-        not_registered.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(getApplicationContext(), Register.class));
-            }
-        });
+//        not_registered.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(Login.this, Register.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 }
