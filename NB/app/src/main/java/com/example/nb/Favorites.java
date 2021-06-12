@@ -2,20 +2,17 @@ package com.example.nb;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.media.tv.TvContract;
 import android.os.StrictMode;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.core.app.ActivityCompat;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.sql.*;
 import java.util.List;
 
-import androidx.core.app.ActivityCompat;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-
-public class MyList extends AppCompatActivity {
+public class Favorites extends AppCompatActivity {
 
     private int user_id;
     private List<BookDetails> book_list;
@@ -30,19 +27,12 @@ public class MyList extends AppCompatActivity {
     private TextView textView;
     FirebaseAuth fAuth;
 
-    //public MyList(){};
-
-//    public MyList(int user_id, List<BookDetails> book_list) {
-//        this.user_id = user_id;
-//        this.book_list = book_list;
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_list);
+        setContentView(R.layout.activity_favorites);
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.INTERNET}, PackageManager.PERMISSION_GRANTED);
-        textView = findViewById(R.id.textView4);
+        textView = findViewById(R.id.textView5);
 
         fAuth = FirebaseAuth.getInstance();
         String currentuser = fAuth.getCurrentUser().getUid();
@@ -61,11 +51,7 @@ public class MyList extends AppCompatActivity {
         String str = "";
         String title1 = "";
         try {
-//            pstmt = connection.prepareStatement("SELECT book_id FROM Book WHERE title = " + "?");
-//            pstmt.setString(1, title);
-//            rs = pstmt.executeQuery();
-
-            PreparedStatement bstmt = connection.prepareStatement("SELECT bookshelf_id FROM Bookshelf WHERE client_id = " + "?" + " and name = 'My List'");
+            PreparedStatement bstmt = connection.prepareStatement("SELECT bookshelf_id FROM Bookshelf WHERE client_id = " + "?" + " and name = 'Favorites'");
             bstmt.setString(1, currentuser);
             ResultSet rst = bstmt.executeQuery();
 

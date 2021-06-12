@@ -55,6 +55,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String semail = email.getText().toString().trim();
+                System.out.println(semail);
                 String spass = password.getText().toString().trim();
 
                 if (TextUtils.isEmpty(semail)){
@@ -102,28 +103,26 @@ public class Register extends AppCompatActivity {
                 String currentuser = fAuth.getCurrentUser().getUid();
 
                 // Create Client
-                int clientID = 0;
-                try{
-                    PreparedStatement pstmt = connection.prepareStatement("SELECT MAX(client_id) + 1 FROM Client");
-                    ResultSet rs = pstmt.executeQuery();
-                    if (rs.next()){
-                        clientID = rs.getInt(1);
-                    }
-                    if (clientID == 0){
-                        clientID += 1;
-                    }
-                    String query = "INSERT INTO Bookshelf (client_id, email, password) " + "values (?, ?, ?)";
-                    PreparedStatement stmt = connection.prepareStatement(query);
-                    stmt.setInt(1, clientID);
-                    stmt.setString(2, semail);
-                    stmt.setString(3, spass);
-                    stmt.executeUpdate();
-                }
-                catch (SQLException throwables) {
-                    throwables.printStackTrace();
-                }
+//                try{
+//                    System.out.println("Add Client");
+//                    //PreparedStatement pstmt = connection.prepareStatement("SELECT MAX(client_id) + 1 FROM Client");
+//                    //String query = "INSERT INTO Bookshelf (client_id, email, password, first_name, last_name) " + "values (?, ?, ?, ?, ?)";
+//                    String query = "INSERT INTO Bookshelf (client_id) " + "values (?)";
+//                    PreparedStatement stmt = connection.prepareStatement(query);
+//                    String name = "";
+//                    stmt.setString(1, currentuser);
+////                    stmt.setString(2, semail);
+////                    stmt.setString(3, spass);
+////                    stmt.setString(4, name);
+////                    stmt.setString(5, name);
+//                    stmt.executeUpdate();
+//                }
+//                catch (SQLException throwables) {
+//                    System.out.println("catch Client");
+//                    throwables.printStackTrace();
+//                }
 
-                // Create Bookshelf
+                // Create Bookshelf for My List
                 int bookshelfID = 0;
                 try{
                     PreparedStatement pstmt = connection.prepareStatement("SELECT MAX(bookshelf_id) + 1 FROM Bookshelf");
@@ -139,6 +138,27 @@ public class Register extends AppCompatActivity {
                     stmt.setInt(1, bookshelfID);
                     stmt.setString(2, currentuser);
                     stmt.setString(3, "My List");
+                    stmt.executeUpdate();
+                }
+                catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+                // Create Bookshelf for Favorites
+                try{
+                    PreparedStatement pstmt = connection.prepareStatement("SELECT MAX(bookshelf_id) + 1 FROM Bookshelf");
+                    ResultSet rs = pstmt.executeQuery();
+                    if (rs.next()){
+                        bookshelfID = rs.getInt(1);
+                    }
+                    if (bookshelfID == 0){
+                        bookshelfID += 1;
+                    }
+                    String query = "INSERT INTO Bookshelf (bookshelf_id, client_id, name) " + "values (?, ?, ?)";
+                    PreparedStatement stmt = connection.prepareStatement(query);
+                    stmt.setInt(1, bookshelfID);
+                    stmt.setString(2, currentuser);
+                    stmt.setString(3, "Favorites");
                     stmt.executeUpdate();
                 }
                 catch (SQLException throwables) {
