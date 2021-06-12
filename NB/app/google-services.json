@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "12699081397",
+    "project_id": "novusbiblo",
+    "storage_bucket": "novusbiblo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12699081397:android:7fc26b5479fcbf410fbcfc",
+        "android_client_info": {
+          "package_name": "com.example.nb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12699081397-ubvkecbc014frfv21tip4qpqj1cg06pk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nb",
+            "certificate_hash": "7ca78bf251b66fbd295ba3614fd703f4ac20eff1"
+          }
+        },
+        {
+          "client_id": "12699081397-4g768q8dml75qkdm93jrl0rodvkth9bc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWrwa4YvGoDSZ2oUepxjulYP8epLp9CgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12699081397-4g768q8dml75qkdm93jrl0rodvkth9bc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
