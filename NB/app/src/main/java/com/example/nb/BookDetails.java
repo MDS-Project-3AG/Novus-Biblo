@@ -22,7 +22,7 @@ public class BookDetails extends AppCompatActivity {
     private ArrayList<String> authors;
 
     TextView titleTV, subtitleTV, publisherTV, descTV, pageTV, publishDateTV;
-    Button previewBtn, buyBtn;
+    Button listBtn, favBtn;
     private ImageView bookIV;
 
     @Override
@@ -36,8 +36,8 @@ public class BookDetails extends AppCompatActivity {
         descTV = findViewById(R.id.idTVDescription);
         pageTV = findViewById(R.id.idTVNoOfPages);
         publishDateTV = findViewById(R.id.idTVPublishDate);
-        previewBtn = findViewById(R.id.idBtnPreview);
-        buyBtn = findViewById(R.id.idBtnBuy);
+        listBtn = findViewById(R.id.addToMyList);
+        favBtn = findViewById(R.id.addToFav);
         bookIV = findViewById(R.id.idIVbook);
 
         title = getIntent().getStringExtra("title");
@@ -59,7 +59,7 @@ public class BookDetails extends AppCompatActivity {
         pageTV.setText("No Of Pages : " + pageCount);
         Picasso.get().load(thumbnail).into(bookIV);
 
-        previewBtn.setOnClickListener(new View.OnClickListener() {
+        listBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (previewLink.isEmpty()) {
@@ -72,17 +72,19 @@ public class BookDetails extends AppCompatActivity {
             }
         });
 
-        buyBtn.setOnClickListener(new View.OnClickListener() {
+        favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (buyLink.isEmpty()) {
-                    Toast.makeText(BookDetails.this, "No buy page present for this book", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Uri uri = Uri.parse(buyLink);
-                Intent i = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(i);
+//                if (buyLink.isEmpty()) {
+//                    Toast.makeText(BookDetails.this, "No buy page present for this book", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                Uri uri = Uri.parse(buyLink);
+//                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+//                startActivity(i);
+                MyList m1 = new MyList();
             }
         });
+
     }
 }
