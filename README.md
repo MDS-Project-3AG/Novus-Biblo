@@ -1,6 +1,6 @@
 ## NOVUS BIBLO
 
-**Application made by:** [Andreea Popa](https://github.com/andreea-popa22), [Gabi Badescu](https://github.com/BadescuGabi), [Albert David](https://github.com/albertdavid00) 
+**Application made by:** [Andreea Popa](https://github.com/andreea-popa22), [Alina Dorneanu](https://github.com/alina0311), [Gabi Badescu](https://github.com/BadescuGabi), [Albert David](https://github.com/albertdavid00) 
 
 ### Epics:
 - Customers have to register and authentificate before they can use the application and have their own profile with statistics and receive recommendations.
