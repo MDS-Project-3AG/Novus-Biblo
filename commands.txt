@@ -1,1 +1,0 @@
-../comenzi_gitbash.txt

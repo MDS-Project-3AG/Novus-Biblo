@@ -59,6 +59,7 @@ public class MainScreen extends AppCompatActivity {
     private TextView textView1;
     private Button btn;
     private Button myListBtn;
+    private Button favBtn;
 
     private static String ip = "192.168.1.16";
     private static String port = "1433";
@@ -92,6 +93,15 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainScreen.this, MyList.class);
+                startActivity(intent);
+            }
+        });
+
+        favBtn = (Button) findViewById(R.id.favorites);
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Favorites.class);
                 startActivity(intent);
             }
         });

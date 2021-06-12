@@ -1,5 +1,6 @@
 package com.example.nb;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -17,10 +18,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import com.google.firebase.auth.FirebaseAuth;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 public class AllBooksActivity extends AppCompatActivity {
@@ -31,6 +34,15 @@ public class AllBooksActivity extends AppCompatActivity {
     private ImageButton search_btn;
     private ProgressBar progress_bar;
 
+    FirebaseAuth fAuth;
+    private static String ip = "192.168.1.16";
+    private static String port = "1433";
+    //private static String Classes = "nb.c54iovni0dyv.us-east-2.rds.amazonaws.com";
+    private static String database = "nb";
+    private static String username_db = "admin";
+    private static String password_db = "NovusBiblo1";
+    private static String url = "jdbc:mysql://nb.c54iovni0dyv.us-east-2.rds.amazonaws.com/nb";
+    private Connection connection = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +65,21 @@ public class AllBooksActivity extends AppCompatActivity {
                 getBooks(search_input.getText().toString()); //load the books from API
             }
         });
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        try {
+            connection = DriverManager.getConnection(url, username_db, password_db);
+            System.out.println("SUCCESS");
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("FAILURE");
+        }
     }
+
+
 
     private void getBooks(String query) {
         
@@ -100,6 +126,29 @@ public class AllBooksActivity extends AppCompatActivity {
                         System.out.println(aut);
 
                         BookInfo bookInfo = new BookInfo(title, subtitle, authorsArrayList, publisher, published_date, description, pages, thumbnail, preview_link, info_link, buy_link);
+
+
+                        fAuth = FirebaseAuth.getInstance();
+                        String currentuser = fAuth.getCurrentUser().getUid();
+
+                        int binfoID = 0;
+                        try{
+                            PreparedStatement pstmt = connection.prepareStatement("SELECT MAX(book_id) + 1 FROM Book");
+                            ResultSet rs = pstmt.executeQuery();
+                            if (rs.next()){
+                                binfoID = rs.getInt(1);
+                            }
+                            String query = "INSERT INTO Book (book_id, title, published_date) " + "values (?, ?, ?)";
+                            PreparedStatement stmt = connection.prepareStatement(query);
+                            stmt.setInt(1, binfoID);
+                            stmt.setString(2, title);
+                            stmt.setString(3, published_date);
+                            stmt.executeUpdate();
+                        }
+                        catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                        }
+
                         System.out.println(title);
                         bookArray.add(bookInfo); //aded to booksArray
 
