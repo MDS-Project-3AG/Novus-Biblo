@@ -13,10 +13,20 @@ public class BookInfo {
     private String previewLink;
     private String infoLink;
     private String buyLink;
+<<<<<<< HEAD
+=======
+    public static int aux = 0;
+    public int book_id;
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
 
     public BookInfo(String title, String subtitle, ArrayList<String> authors, String publisher,
                     String publishedDate, String description, int pageCount, String thumbnail,
                     String previewLink, String infoLink, String buyLink) {
+<<<<<<< HEAD
+=======
+        aux += 1;
+        this.book_id = aux;
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
         this.title = title;
         this.subtitle = subtitle;
         this.authors = authors;

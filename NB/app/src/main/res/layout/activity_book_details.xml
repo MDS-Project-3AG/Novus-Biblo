@@ -94,22 +94,39 @@
                 android:weightSum="2">
 
             <Button
+<<<<<<< HEAD
                     android:id="@+id/idBtnPreview"
+=======
+                    android:id="@+id/addToMyList"
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
+<<<<<<< HEAD
                     android:text="Preview"
                     android:textAllCaps="false" />
 
             <Button
                     android:id="@+id/idBtnBuy"
+=======
+                    android:text="Add to My List"
+                    android:textAllCaps="false"/>
+
+            <Button
+                    android:id="@+id/addToFav"
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
+<<<<<<< HEAD
                     android:text="Buy"
                     android:textAllCaps="false" />
+=======
+                    android:text="Add to Favorites"
+                    android:textAllCaps="false"/>
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
 
         </LinearLayout>
     </LinearLayout>

@@ -2,8 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.nb">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+=======
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
 
     <application
             android:allowBackup="true"
@@ -12,6 +17,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+<<<<<<< HEAD
+=======
+        <activity android:name=".Favorites">
+        </activity>
+        <activity android:name=".MyList">
+        </activity>
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
         <activity android:name=".AllBooksActivity">
         </activity>
         <activity android:name=".BookDetails">

@@ -58,6 +58,11 @@ public class MainScreen extends AppCompatActivity {
     private TextView textView;
     private TextView textView1;
     private Button btn;
+<<<<<<< HEAD
+=======
+    private Button myListBtn;
+    private Button favBtn;
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
 
     private static String ip = "192.168.1.16";
     private static String port = "1433";
@@ -86,6 +91,26 @@ public class MainScreen extends AppCompatActivity {
             }
         });
 
+<<<<<<< HEAD
+=======
+        myListBtn = (Button) findViewById(R.id.myList);
+        myListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, MyList.class);
+                startActivity(intent);
+            }
+        });
+
+        favBtn = (Button) findViewById(R.id.favorites);
+        favBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainScreen.this, Favorites.class);
+                startActivity(intent);
+            }
+        });
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
 
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -106,8 +131,11 @@ public class MainScreen extends AppCompatActivity {
             textView.setText("FAILURE");
         }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1cad84ece6238ae19906d1e9175b3ffa84a8ebb8
     }
 
     public void sqlButton(View view){
