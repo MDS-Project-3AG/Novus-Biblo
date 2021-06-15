@@ -24,3 +24,5 @@
 11. As a customer, I want a section called "Haven't read for a while" to remind me what books I have been oblivious to.
 12. As a customer, I want statistics to sum up my progress.
 
+### Demo:
+[Demo](demo.mp4)
