@@ -25,4 +25,4 @@
 12. As a customer, I want statistics to sum up my progress.
 
 ### Demo:
-[Demo](demo.mp4)
+![Demo](demo.mp4)
